@@ -1,0 +1,12 @@
+{
+  "name": "actionlint-cli",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "actionlint": "./bin/actionlint.mjs"
+  },
+  "dependencies": {
+    "actionlint": "^2.0.6"
+  }
+}

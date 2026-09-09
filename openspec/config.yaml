@@ -1,0 +1,61 @@
+schema: spec-driven
+
+project:
+  name: linkedin-style-page
+  workspace: "/home/sergiog/Desktop/Semillero/ Pagina_web_proyecto"
+
+sdd:
+  execution_mode: interactive
+  artifact_store:
+    mode: openspec
+  delivery_strategy: ask-on-risk
+  review_budget_lines: 800
+  strict_tdd: false
+
+context: |
+  Repository purpose: a LinkedIn-inspired professional networking web project.
+  Current implementation: documentation-only; no supported application project marker was found.
+  Architecture: not yet established.
+  Testing: no workspace-level or project-level test command is available.
+  Conventions: Markdown documentation and repository-local Git workflow guidance.
+
+projects: []
+
+testing:
+  workspace_test_command: ""
+  strict_tdd: false
+  strict_tdd_reason: "No supported project roots or workspace-wide test command were discovered."
+  projects: []
+  test_layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage:
+    available: false
+    command: ""
+  quality_tools:
+    linter: ""
+    type_checker: ""
+    formatter: ""
+
+rules:
+  proposal:
+    - Include rollback plans for risky changes.
+    - Escalate risks before proceeding when delivery_strategy is ask-on-risk.
+  specs:
+    - Use Given/When/Then scenarios and RFC 2119 keywords.
+  design:
+    - Document architecture decisions and rationale.
+  tasks:
+    - Group work by phase and keep each task completable in one session.
+  apply:
+    guidelines:
+      - Follow established project conventions when implementation begins.
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas.
