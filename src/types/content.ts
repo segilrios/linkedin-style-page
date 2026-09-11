@@ -13,14 +13,16 @@ export type Education = {
 
 export type Contact = {
   label: string
-  href: string
+  value: string
+  href?: string
+  external?: boolean
 }
 
 export type Project = {
   title: string
   description: string
   technologies: string[]
-  repositoryUrl: string
+  repositoryUrl?: string
   status: string
   image?: { src: string; alt: string }
   demoUrl?: string

@@ -31,13 +31,14 @@ describe('ProjectCard', () => {
       title: completeProject.title,
       description: completeProject.description,
       technologies: completeProject.technologies,
-      repositoryUrl: completeProject.repositoryUrl,
       status: completeProject.status,
     }
     render(<ProjectCard project={projectWithoutResources} />)
 
     expect(screen.getByText('Project image unavailable')).toBeInTheDocument()
+    expect(screen.getByText('Repository unavailable')).toBeInTheDocument()
     expect(screen.getByText('Demo unavailable')).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'View repository' })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: 'View demo' })).not.toBeInTheDocument()
   })
 })

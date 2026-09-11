@@ -3,7 +3,9 @@ import { expect, test } from '@playwright/test'
 test('keeps portfolio content readable and keyboard navigation operable on desktop', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('main')).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Professional portfolio' })).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Electronics Engineering student and applied systems researcher' }),
+  ).toBeVisible()
 
   await page.keyboard.press('Tab')
   await expect(page.getByRole('link', { name: 'Skip to main content' })).toBeFocused()

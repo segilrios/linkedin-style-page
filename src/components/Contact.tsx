@@ -7,8 +7,19 @@ export function Contact({ contacts, cv }: Pick<Profile, 'contacts' | 'cv'>) {
       {contacts.length > 0 ? (
         <ul className="contact-list">
           {contacts.map((contact) => (
-            <li key={contact.href}>
-              <a href={contact.href}>{contact.label}</a>
+            <li className="contact-item" key={contact.label}>
+              <span className="contact-label">{contact.label}</span>
+              {contact.href ? (
+                <a
+                  href={contact.href}
+                  target={contact.external ? '_blank' : undefined}
+                  rel={contact.external ? 'noreferrer' : undefined}
+                >
+                  {contact.value}
+                </a>
+              ) : (
+                <address>{contact.value}</address>
+              )}
             </li>
           ))}
         </ul>
