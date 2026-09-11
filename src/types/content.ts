@@ -28,6 +28,12 @@ export type Project = {
   demoUrl?: string
 }
 
+export type ProjectDomainEvidence = {
+  domain: string
+  projects: string[]
+  summary: string
+}
+
 export type Profile = {
   name: string
   headline: string

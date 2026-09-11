@@ -4,6 +4,7 @@ const navigationItems = [
   ['Experience', '#experience'],
   ['Skills', '#skills'],
   ['Education', '#education'],
+  ['Evidence', '#evidence'],
   ['Projects', '#projects'],
   ['Contact', '#contact'],
 ] as const
@@ -11,7 +12,11 @@ const navigationItems = [
 export function Header({ name }: HeaderProps) {
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label={`Back to ${name} introduction`}>
+      <a
+        className="wordmark"
+        href="#top"
+        aria-label={`Back to ${name} introduction`}
+      >
         {name}
       </a>
       <nav aria-label="Primary navigation">

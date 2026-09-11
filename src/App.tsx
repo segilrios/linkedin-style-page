@@ -4,9 +4,10 @@ import { Experience } from './components/Experience'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
+import { ProjectEvidence } from './components/ProjectEvidence'
 import { Skills } from './components/Skills'
 import { profile } from './content/profile'
-import { projects } from './content/projects'
+import { projectDomainEvidence, projects } from './content/projects'
 
 function App() {
   return (
@@ -20,11 +21,17 @@ function App() {
         <Experience entries={profile.experience} />
         <Skills entries={profile.skills} />
         <Education entries={profile.education} />
+        <ProjectEvidence
+          entries={projectDomainEvidence}
+          totalProjects={projects.length}
+        />
         <Projects entries={projects} />
         <Contact contacts={profile.contacts} cv={profile.cv} />
       </main>
       <footer>
-        <p>Original portfolio. No affiliation with or integration into LinkedIn.</p>
+        <p>
+          Original portfolio. No affiliation with or integration into LinkedIn.
+        </p>
       </footer>
     </div>
   )

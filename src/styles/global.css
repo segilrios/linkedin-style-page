@@ -178,9 +178,13 @@ h2 {
   transform: translateY(-0.3rem);
 }
 .project-card img {
+  aspect-ratio: 4 / 3;
+  background: #f3f4f3;
   display: block;
-  height: auto;
+  height: 13rem;
   max-width: 100%;
+  object-fit: contain;
+  width: 100%;
   transition: transform 240ms ease;
 }
 .project-card:hover img {
@@ -194,6 +198,81 @@ h2 {
 .resource-unavailable {
   color: #5c6470;
   font-style: italic;
+}
+.section-introduction {
+  max-width: 48rem;
+}
+.section-introduction h2 {
+  margin-bottom: 0.75rem;
+}
+.evidence-layout {
+  align-items: stretch;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.75fr);
+  margin-top: 2rem;
+}
+.evidence-chart,
+.evidence-detail {
+  background: #fffef9;
+  border: 1px solid #d4cdbf;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+.chart-scale {
+  color: #5c6470;
+  display: flex;
+  font-size: 0.78rem;
+  justify-content: space-between;
+  margin: 0 3.2rem 0.4rem min(13rem, 34%);
+}
+.evidence-row {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  font: inherit;
+  gap: 0.75rem;
+  grid-template-columns: minmax(8rem, 34%) minmax(6rem, 1fr) 2.5rem;
+  padding: 0.65rem 0.4rem;
+  text-align: left;
+  width: 100%;
+}
+.evidence-row:hover,
+.evidence-row[aria-pressed='true'] {
+  background: #eef4f5;
+}
+.evidence-row:focus-visible {
+  outline: 3px solid #bd6d0b;
+  outline-offset: 2px;
+}
+.evidence-label,
+.evidence-count,
+.evidence-projects-label {
+  font-weight: 700;
+}
+.evidence-track {
+  background: #dfe5e5;
+  display: block;
+  height: 1rem;
+  overflow: hidden;
+}
+.evidence-bar {
+  background: linear-gradient(90deg, #17628e, #2d8491);
+  display: block;
+  height: 100%;
+  transition: width 240ms ease;
+}
+.evidence-row[aria-pressed='true'] .evidence-bar {
+  background: linear-gradient(90deg, #9b5707, #bd6d0b);
+}
+.evidence-detail h3 {
+  margin: 0.3rem 0 0.75rem;
+}
+.evidence-detail ul {
+  padding-left: 1.25rem;
 }
 .contact-list {
   display: grid;
@@ -330,6 +409,19 @@ footer {
   }
   main > section {
     padding: 2.75rem 0;
+  }
+  .evidence-layout {
+    grid-template-columns: 1fr;
+  }
+  .chart-scale {
+    margin-left: 0;
+  }
+  .evidence-row {
+    gap: 0.4rem 0.65rem;
+    grid-template-columns: 1fr 2.5rem;
+  }
+  .evidence-label {
+    grid-column: 1 / -1;
   }
 }
 
